@@ -38,6 +38,13 @@ public class Card {
     @JsonProperty("colors")
     private List<String> colors;
 
+    @JsonProperty("image_uris")
+    private ImageUris imageUris;
+
+    public String getNormalImageUrl() {
+        return imageUris != null ? imageUris.getNormal() : null;
+    }
+
     @Override
     public String toString() {
     return "Card {\n" +
@@ -51,6 +58,7 @@ public class Card {
            "    power='" + power + "'\n" +
            "    toughness='" + toughness + "'\n" +
            "    colors=" + colors + "\n" +
+           "    imageUrls=" +
            "}";
 }
 
