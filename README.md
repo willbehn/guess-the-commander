@@ -1,8 +1,7 @@
 # guess-the-commander
 
 ## About
-Guess a Magic: The Gathering commander based on different hints! The project uses SpringBoot for the backend and React for the frontend. 
-The project is created for getting better at SpringBoot and for learning React, and is currently work in progress.
+This project is a work in progress created to improve my skills with SpringBoot and to learn React for the frontend. The goal is to create a fun and engaging game where players guess a Magic: The Gathering commander based on various hints. The project is using the scryfall card api for card data.
 
 ## Technologies Used
 
