@@ -12,7 +12,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 @Service
-public class DailyCommanderService {
+public class DailyCardService {
 
     @Autowired
     private ObjectMapper objectMapper; 

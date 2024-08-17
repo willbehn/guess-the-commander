@@ -7,25 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import no.behn.guessthecommander.model.Card;
-import no.behn.guessthecommander.service.DailyCommanderService;
+import no.behn.guessthecommander.service.DailyCardService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
 @RequestMapping("/api")
-public class DailyCommanderController {
+public class DailyCardController {
 
-    private final DailyCommanderService dailyCommanderService;
+    private final DailyCardService dailyCommanderService;
     
     @Autowired
-    public DailyCommanderController(DailyCommanderService dailyCommanderService){
+    public DailyCardController(DailyCardService dailyCommanderService){
         this.dailyCommanderService = dailyCommanderService;
     }
 
     @GetMapping("/card/daily")
     public Card getDailyCommander() throws IOException, InterruptedException {
-        
         return dailyCommanderService.getCard();
     }
     
