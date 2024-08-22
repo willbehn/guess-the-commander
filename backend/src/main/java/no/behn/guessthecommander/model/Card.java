@@ -41,6 +41,12 @@ public class Card {
     @JsonProperty("image_uris")
     private ImageUris imageUris;
 
+    @JsonProperty("keywords")
+    private List<String> keywords;
+
+    @JsonProperty("edhrec_rank")
+    private int edhrecRank;
+
     public String getNormalImageUrl() {
         return imageUris != null ? imageUris.getNormal() : null;
     }

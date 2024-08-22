@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Card.css'; 
 
 const Card = () => {
     const [cardImageUrl, setCardImageUrl] = useState(null);
@@ -11,16 +12,30 @@ const Card = () => {
             .then(response => {
                 setCardImageUrl(response.data.normalImageUrl);
                 setLoading(false);
+            })
+            .catch(error => {
+                console.error("Error fetching card image:", error);
+                setLoading(false);
             });
     };
+
+    React.useEffect(() => {
+        fetchCardImage();
+    }, []);
 
     return (
         <div>
             <h1>Card Image</h1>
-            <button onClick={fetchCardImage}>Get Card Image</button>
             {loading && <p>Loading...</p>}
             {cardImageUrl && !loading && (
-                <img src={cardImageUrl} alt="Card" style={{ maxWidth: '100%', height: 'auto' }} />
+                <div className="card-container">
+                    <img
+                        src={cardImageUrl}
+                        alt="Card"
+                        className="card-image"
+                        onClick={fetchCardImage} 
+                    />
+                </div>
             )}
         </div>
     );
